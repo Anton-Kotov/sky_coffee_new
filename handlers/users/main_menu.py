@@ -143,12 +143,12 @@ async def list_order(callback: types.CallbackQuery, callback_data: dict,
                           f"объемом: {hbold(volume)}",
                           f"молоко: {hbold(milk)}",
                           f"добавить: {hbold(adds)}\n",
-                          f"Цена: {hbold(price)}₽\n\n"])
+                          f"Цена: {hbold(price)}₽\n"])
     else:
         text = '\n'.join([f"{item[0].main_name}: {item[0].subcategory_name}",
                           f"объемом: {hbold(volume)}",
                           f"добавить: {hbold(adds)}\n",
-                          f"Цена: {hbold(price)}₽\n\n"])
+                          f"Цена: {hbold(price)}₽\n"])
 
     async with state.proxy() as data:
         data["order"] = text

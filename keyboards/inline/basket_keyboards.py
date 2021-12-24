@@ -1,7 +1,8 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.callback_data import CallbackData
 
-
+time_cd = CallbackData("time", "time")
+your_time_cd = CallbackData("your", "time")
 
 async def basket_select():
     markup = InlineKeyboardMarkup(row_width=2)
@@ -32,36 +33,27 @@ paid_keyboard = InlineKeyboardMarkup(
 async def time_select():
     markup = InlineKeyboardMarkup(row_width=3)
 
-    now = InlineKeyboardButton(text="Сейчас", callback_data="now")
+    now = InlineKeyboardButton(text="В течении 10 мин.", callback_data=time_cd.new(time="В течении 10 мин."))
     markup.insert(now)
 
-    hour = InlineKeyboardButton(text="Через час", callback_data="hour")
+    hour = InlineKeyboardButton(text="Через 30 мин.", callback_data=time_cd.new(time="Через час"))
     markup.insert(hour)
 
-    your_time = InlineKeyboardButton(text="Свой вариант", callback_data="your_time")
+    your_time = InlineKeyboardButton(text="Свой вариант", callback_data=your_time_cd.new(time="Свой вариант"))
     markup.insert(your_time)
 
     return markup
 
-# time_select = InlineKeyboardMarkup(
-#     inline_keyboard=[
-#         [
-#             InlineKeyboardButton(
-#                 text="Сейчас",
-#                 callback_data="now")
-#         ],
-#         [
-#             InlineKeyboardButton(
-#                 text="В течении часа",
-#                 callback_data="hour")
-#         ],
-# [
-#             InlineKeyboardButton(
-#                 text="Свой вариант",
-#                 callback_data="your_time")
-#         ]
-#     ]
-# )
+reviews = InlineKeyboardMarkup(
+    inline_keyboard=[
+        [
+            InlineKeyboardButton(
+                text="Оставить отзыв",
+                callback_data="reviews")
+        ]
+    ]
+)
+
 
 
 

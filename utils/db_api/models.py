@@ -11,7 +11,7 @@ class User(db.Model):
     name = Column(db.String(50))
     phone = Column(db.String(15))
     num = Column(Integer)
-    basket = Column(db.String(600))
+    basket = Column(db.Text)
     current_price = Column(db.Float(10))
     total_spent = Column(db.Float(10))
 
@@ -23,7 +23,7 @@ class Reviews(db.Model):
     telegram_id = Column(db.BigInteger)
     name = Column(db.String(50))
     date = Column(DateTime(True), server_default=db.func.now())
-    reviews = Column(db.String(100))
+    reviews = Column(db.String(500))
 
 class Item(db.Model):
     __tablename__ = "items"
