@@ -19,6 +19,7 @@ async def add_basket(callback: types.CallbackQuery, callback_data: dict, state: 
         await update_user_num(telegram_id, user.num + 1)
         data = await state.get_data()
         order1 = data["order"]
+        order_first = data["order_first"]
         order = f"{user.basket}{user.num + 1}) {order1}"
         current_price = data["price"] + user.current_price
         await update_user_basket(telegram_id, order)
@@ -26,10 +27,14 @@ async def add_basket(callback: types.CallbackQuery, callback_data: dict, state: 
         main = callback_data.get("main")
         category = callback_data.get("category")
         subcategory = callback_data.get("subcategory")
+        await state.finish()
+        async with state.proxy() as data:
+            data["volume_price"] = 0
+            data["milk_price"] = 0
         item = await get_item(main_code=main, category_code=category, subcategory_code=subcategory)
         markup = await make_order_keyboard(callback, callback_data, main=main, category=category,
                                            subcategory=subcategory, state=state)
-        photo = InputMedia(media=(item[0].photo), caption=order1)
+        photo = InputMedia(media=(item[0].photo), caption=order_first)
         await callback.message.edit_media(media=photo, reply_markup=markup)
     else:
         await callback.answer(text="Корзина переполнена", show_alert=True)

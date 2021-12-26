@@ -70,11 +70,12 @@ async def list_order(callback: types.CallbackQuery, callback_data: dict,
             data["volume"] = data.get("volume", "100 гр.")
         else:
             data["volume"] = data.get("volume", item[0].volume[:3] + " мл.")
-
         if (item[0].main_name == "Чай" and item[0].subcategory_name != "Матча-латте") \
             or item[0].subcategory_name == "Эспрессо" or item[0].subcategory_name == "Гранола":
 
             data["milk"] = data.get("milk", "Нет")
+        elif item[0].category_name == "Раф":
+            data["milk"] = data.get("milk", "Сливки")
         else:
             data["milk"] = data.get("milk", "Коровье")
 
@@ -152,6 +153,7 @@ async def list_order(callback: types.CallbackQuery, callback_data: dict,
 
     async with state.proxy() as data:
         data["order"] = text
+        data["order_first"] = data.get("order_first", text)
 
     photo = InputMedia(media=(item[0].photo), caption=text)
     await callback.message.edit_media(media=photo, reply_markup=markup)
