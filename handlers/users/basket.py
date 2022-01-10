@@ -64,6 +64,7 @@ async def drop_basket(callback: types.CallbackQuery, state: FSMContext):
     text = f"Всего к оплате 0₽"
     photo = InputMedia(media="https://ibb.co/Z8qP9KY", caption=text)
     await callback.message.edit_media(media=photo, reply_markup=markup)
+    await callback.answer()
     # await callback.answer(text="Корзина очищена", show_alert=True)
 
 @dp.callback_query_handler(text="pay")
