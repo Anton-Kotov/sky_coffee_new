@@ -1,6 +1,7 @@
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.types import InputMedia
+from aiogram.utils.markdown import hbold
 
 from keyboards.inline.basket_keyboards import basket_select, time_select
 from keyboards.inline.menu_keyboards import basket_add_cd, basket_cd, make_order_keyboard
@@ -29,6 +30,7 @@ async def add_basket(callback: types.CallbackQuery, callback_data: dict, state: 
         subcategory = callback_data.get("subcategory")
         await state.finish()
         async with state.proxy() as data:
+            data["order"] = order1
             data["volume_price"] = 0
             data["milk_price"] = 0
         item = await get_item(main_code=main, category_code=category, subcategory_code=subcategory)
@@ -45,7 +47,7 @@ async def show_basket(callback: types.CallbackQuery, state: FSMContext):
     markup = await basket_select()
     telegram_id = callback.from_user.id
     user = await select_user(telegram_id)
-    text = f"{user.basket}\n\nВсего к оплате {user.current_price}₽"
+    text = f"{user.basket}\n\nВсего к оплате {hbold(user.current_price)}₽"
     photo = InputMedia(media="https://ibb.co/Z8qP9KY", caption=text)
     await callback.message.edit_media(media=photo, reply_markup=markup)
 

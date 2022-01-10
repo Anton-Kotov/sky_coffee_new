@@ -110,14 +110,14 @@ async def approve_payment(callback: types.CallbackQuery, state: FSMContext):
         amount = user.current_price
         data = await state.get_data()
         time = data["time"]
-        text = f"{user.basket}\nПокупатель заберет заказ: {hbold(time)}\n" \
+        text = f"Покупатель: {hbold(user.name)}\n" \
+               f"{user.basket}\n" \
+               f"Покупатель заберет заказ: {hbold(time)}\n" \
                f"Всего оплачено: {hbold(amount)}₽"
 
-        await update_user_basket(telegram_id, text)
         for admin in ADMINS:
             try:
-                user = await select_user(telegram_id)
-                await dp.bot.send_message(admin, user.basket)
+                await dp.bot.send_message(admin, text)
             except Exception as err:
                 logging.exception(err)
 

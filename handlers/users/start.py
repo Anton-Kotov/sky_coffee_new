@@ -22,18 +22,5 @@ async def start_message(message: types.Message):
     await message.answer(text="Жми на кнопку МЕНЮ для заказа.", reply_markup=menu)
 
 
-@dp.message_handler(commands="отзыв")
-async def start_message(message: types.Message, state: FSMContext):
-    await message.answer(f"Напиши свой отзыв")
-    await state.set_state("review")
-
-@dp.message_handler(state="review")
-async def enter_review(message: types.Message, state: FSMContext):
-    print(1)
-    await commands.add_reviews(telegram_id=message.from_user.id,
-                               name=message.from_user.full_name,
-                               reviews=message.text)
-    await state.finish()
-
 
 

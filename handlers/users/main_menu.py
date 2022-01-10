@@ -109,11 +109,13 @@ async def list_order(callback: types.CallbackQuery, callback_data: dict,
                 if data["adds"] != "Ничего":
                     data["adds"] = data["adds"] + " + " + name[1:]
                     data["syrop"] = name[1:]
-                    data["add_price"] = data["add_price"] + add[0].price
+                    if item[0].subcategory_name != "Ванильный":
+                        data["add_price"] = data["add_price"] + add[0].price
                 else:
                     data["adds"] = name[1:]
                     data["syrop"] = name[1:]
-                    data["add_price"] = add[0].price
+                    if item[0].subcategory_name != "Ванильный":
+                        data["add_price"] = add[0].price
             elif name[0] == "4":
                 if data["adds"] != "Ничего":
                     data["adds"] = data["adds"] + " + " + name[1:]
