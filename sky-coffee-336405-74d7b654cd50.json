@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sky-coffee-336405",
+  "private_key_id": "74d7b654cd5094a0094f6f7311be9f098f977d85",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDS4mad4U5Q8vP6\narPNkJVMn7VBA7xQQQZMNiv9ekCqL+/KBYmyFWgpKyGrjgLxjAbLH2i38odNBf0u\nCkPNiEMbrHzOs3Y7JIygkrYfIWss9iw65k0VzGgTJ0e8qvAhpa/pxVKk8QYP6nKm\nr6EG5DoVSQ/UeqbxgLg00woyENxjPuVfobRj54lBSI8+fGozmrODWy0NPscM6+4I\nekNKL2pA1elISMceJWLLe4HLcVHVMs/qyxWt86+9hJzO7t/soSIx8f3ECdrRkM7X\nKyQrqjVp7HAFgajtKHWrOqrgK/2EynfTjjYzXN/AY/UeEPbTJlTjKMPxIRYkxxoz\nF8XS+NxBAgMBAAECggEAAgxjbp3+jqrmzkmk4KFf0IxOQdOpYQaEqw8CpeC/CeLT\nJjKgErFXtJX/6s9DaDkR5CgJsnG3Y+WOlEN9bZy+JCHB3kMgKfUSAvRHMxhgwWF3\nGVpdKNH2YoCTlzmk1qV/RtrHvE+VXWhg/+KoV9gLLWOV37Hnobm8RafAIK+JEyiy\ndv9zy+91z9GFcDjOB29Q567NMC9j1H8yeqti50RD5F4GCfemD9xQD+nDaxwBZdrY\n5NWMdEeys97fPc+EvTo4WVQ/cfqcY6Sf00DcUQHLuDi6RVSG/F0rdd4K7Te9frCD\nNW/eLvUz8qb36Gys47XL2mQu3VohIi7O9dfuV1Q6sQKBgQD6lDAJMrt+SqR9w56J\nAZt+WGfDdM7vpu1BthVOV70NQtO1s070vZA46WxP1naxp6NZplijliKjb5v+1+L3\nfnXNRr3PS9bN+E6R8827cavm6RFi+vEgnnm2n4Fjils7gGN8Li6TV2ydJ5H7erwu\n4XyFtFBHc0pQ3/mCiniCqxaqaQKBgQDXcl5H35m6wdNig+ry9gFZkAH5ou2j5vBf\nf5bk7wcYAReWJSMY2YuTn7VQ6ApXCxydtJGQJ8YycnlYSWHQM9/U2UT2HHzDWs/F\n1be64n+Bd+3at1WXZek6jpZ5qpnyZ1PSR1dG1mvS/g+UeV+2uzK/l2OpA+PpxaXB\nfOYZmLl4GQKBgQCeEO6ATuVhFDrRLp4J9N6eg6vo6v1Cxbzyb6bfBY+3Fsmv281Z\nq16X1/9AGZxEEuiDO+C8SI/PIy93Qb3lu3saI57GbiOxSApgHThRHrJ+ddVG599F\nYVKL9fBL11IXpbSb+BHfVg2o0PZQearNs+W1/fmKKNrfS3n8c9bzLnOcyQKBgAXA\nwg+9Qsef4VsiFqYCN6sCk2rtFNdplUWXjJn0YAYeEVkrCLLjLDz26MqOR6hnXY5A\nghqNVVeHgwH+g6Qhnnp6isLfo907kYzA1jUhUzJL14gdmSV/zSiJIi+BhLbaV3yn\n9wanNx3dNuFKFGo2uXYwPrMGrZFSe8ic4zAPyfQRAoGBAICPuOriy6F3BIubX89Y\nm0mRu07NJbdIBs8GHHuxMfOVxHXGKONIxvcQUj+hs6hocffyNwSN7bIEjDBi22h+\nMhiJCfDl1Bn+1mu9Q9gN0/GQoVSQB53FRVrYm0JAYFkWTqrSlhF1YI+y1G0kaUnU\n9iSfP4OF0WGWHBik36OtDLB4\n-----END PRIVATE KEY-----\n",
+  "client_email": "sky-coffee@sky-coffee-336405.iam.gserviceaccount.com",
+  "client_id": "112224471909042216200",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sky-coffee%40sky-coffee-336405.iam.gserviceaccount.com"
+}
